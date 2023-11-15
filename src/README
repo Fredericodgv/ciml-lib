@@ -87,6 +87,9 @@ How to run the program
   5) mutation            - the mutation algorithm being used.
   6) file (optional)     - the file path to store the program results.
 
+  Like the Example bellow:
+  ./cgp ../tables/cordic.ep seed=2 ncol=2 maxgen=1000000 mutation=1 Results.txt
+
   Population sow with factible solution:
   1) tables              - the circuit being optimized.
   2) seed                - the seed used in the execution. 
