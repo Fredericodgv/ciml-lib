@@ -73,7 +73,7 @@ Cartesian Genetic Programming (CGP)
   can compare any of this options to their algorithm, depending if they start with
   a factible solution or not.
 
-How to run the program
+## How to run the program
 ----------------------------------------------------------------------------------------
   To run the program we need to send some informations through terminal. There will be
   different informations depending if the initital population is randomly seeded or not.
@@ -87,8 +87,8 @@ How to run the program
   5) mutation            - the mutation algorithm being used.
   6) file (optional)     - the file path to store the program results.
 
-  Like the Example bellow:
-  ./cgp ../tables/cordic.ep seed=2 ncol=2 maxgen=1000000 mutation=1 Results.txt
+### Like the Example bellow:
+*  ./cgp ../tables/cordic.ep seed=2 ncol=2 maxgen=1000000 mutation=1 Results.txt
 
   Population sow with factible solution:
   1) tables              - the circuit being optimized.
