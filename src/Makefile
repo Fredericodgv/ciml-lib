@@ -13,4 +13,4 @@ profile:
 	${CC} ${CFLAGS} -pg -o ./bin/${FILE} main.c -lbdd
 
 gprof:
-	gprof ./bin/${FILE}  gmon.out > ./bin/gprof.txt
+	gprof ./bin/${FILE}  gmon.out > ./gprof/${NAME}.txt
