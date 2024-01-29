@@ -42,7 +42,7 @@ int mutation;
 */
 int evolves_cgp_bdd(Individual *population, Table *table, int *gates)
 {
-    long int generation = 0;
+    long int generation = 0; 
 
     evaluate_parent_sat_count(population, table);
     evaluate_population_sat_count(population, table);
@@ -165,15 +165,18 @@ void optimize_circuit(Individual *population, Table *table, int *gates)
 
 int main(int argc, char const *argv[])
 {
-    int semente;
+    int seed;
     mediangen = -1;
-    sscanf(argv[2], "seed=%d", &semente);
+
+    // Set parameters
+    sscanf(argv[2], "seed=%d", &seed);
     sscanf(argv[3], "ncol=%d", &NCOL);
     sscanf(argv[4], "maxgen=%ld", &maxgen);
     sscanf(argv[5], "mutation=%d", &mutation);
     LB = NCOL/2;
-    srand(semente);
+    srand(seed);
 
+    // Set name of output file
     if (argc == 7)
     {
         out_file = fopen(argv[6], "w");
@@ -187,6 +190,7 @@ int main(int argc, char const *argv[])
         out_file = stdout;
     }
 
+    // Set mutation type
     if (mutation == 1)
         fprintf(out_file, "SAM\n");
     else if (mutation == 2)
@@ -199,8 +203,10 @@ int main(int argc, char const *argv[])
         exit(1);
     }
     fflush(out_file);
+    // Initialize bdd
     bdd_init(10000000, 100000);
 
+    // Initialize population allocating memory and setting the individuals
     Individual *population = (Individual *)malloc(sizeof(Individual) * NPOP);
     int gates[NGATES] = {1, 2, 3, 4, 5, 6, 7};
 
@@ -211,6 +217,7 @@ int main(int argc, char const *argv[])
 
     clock_t begin, end;
     begin = clock();
+
 
     if(argc <= 7)
     {
