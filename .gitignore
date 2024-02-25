@@ -1,1 +1,4 @@
 *.sh
+src/gprof/*
+src/bin
+

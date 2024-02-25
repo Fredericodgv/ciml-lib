@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -g -Wall -std=c99 -O0
 RM = rm ./bin/*
-FILE?=default_value_if_not_set_in_enviroment
+FILE?=profile
 
 main:
 	${CC} ${CFLAGS} -o ./bin/cgp main.c -lbdd
@@ -13,4 +13,4 @@ profile:
 	${CC} ${CFLAGS} -pg -o ./bin/${FILE} main.c -lbdd
 
 gprof:
-	gprof ./bin/${FILE}  gmon.out > ./gprof/${NAME}.txt
+	gprof ./bin/profile gmon.out > ./gprof/${FILE}.txt
